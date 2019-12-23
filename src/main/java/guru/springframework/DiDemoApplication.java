@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import guru.springframework.controllers.MyController;
+import guru.springframework.examplebeans.FakeDataSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -15,6 +16,10 @@ public class DiDemoApplication {
 		MyController controller = (MyController) ctx.getBean("myController");
 		
 		controller.hello();
+		
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		
+		System.out.println(fakeDataSource.getUser());
 	}
 
 }
