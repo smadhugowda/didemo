@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 
 import guru.springframework.controllers.MyController;
 import guru.springframework.examplebeans.FakeDataSource;
+import guru.springframework.examplebeans.FakeJMSSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -19,7 +20,11 @@ public class DiDemoApplication {
 		
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		
+		FakeJMSSource  fakeJMSSource = ctx.getBean(FakeJMSSource.class);
+		
 		System.out.println(fakeDataSource.getUser());
+		
+		System.out.println(fakeJMSSource.getUser());
 	}
 
 }
